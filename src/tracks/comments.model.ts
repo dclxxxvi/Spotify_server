@@ -10,7 +10,11 @@ import {
 	Table
 } from 'sequelize-typescript';
 
-interface CommentCreationAttrs {}
+interface CommentCreationAttrs {
+	readonly name: string;
+	readonly artist: string;
+	readonly text: string;
+}
 
 @Table({ tableName: 'comments' })
 export class Comment extends Model<Comment, CommentCreationAttrs> {
